@@ -1,0 +1,15 @@
+<form action='/sessions' method='post'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	
+	<input placeholder="Email" type="text" name="email">	
+	<br>
+
+	<input placeholder="Password" type="text" name="password">
+	<br>
+
+	<button type="submit" value="Log In"> Log In</button>
+</form>
+
+<hr>
+
+<a href="/users/new">New User?</a>

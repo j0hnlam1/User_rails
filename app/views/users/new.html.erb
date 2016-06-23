@@ -1,0 +1,16 @@
+<h3>Registration</h3>
+<hr>
+<form action='/users' method='post'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	
+	<input placeholder="Name" type="text" name="user[name]"><br>
+	<input placeholder="Email" type="text" name="user[email]"><br>
+	<input placeholder="Password" type="password" name="user[password]"><br>
+	<input placeholder="Confirm Password" id="Password Confirmation" type="password" name="user[password_confirmation]"><br>
+
+
+	<button type="submit"> Register </button>
+</form>
+
+<hr>
+<a href="/sessions/new">Have an account?</a>
