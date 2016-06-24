@@ -200,6 +200,7 @@ input[type="button"]:focus {
   color: #333;
   border-color: #888;
   outline: 0; }
+  
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,

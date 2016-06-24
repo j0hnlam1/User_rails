@@ -33,8 +33,6 @@ class UsersController < ApplicationController
 		# user.name = params[:user][:name]
 		# user.email = params[:user][:email]
 
-		
-
 		@user = User.find(params[:id])
 		if @user.update_attribute(:name, params[:user][:name])
 			@user.update_attribute(:email, params[:user][:email])
