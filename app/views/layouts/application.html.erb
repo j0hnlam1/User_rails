@@ -17,7 +17,7 @@
 				<form action='/sessions/<%=session.id%>' method='post'>
 				    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 					<input type='hidden' name='_method' value='delete'>
-					<button type='submit'> Log Out</button>
+					<button type='submit' class="button-danger"> Log Out</button>
 				</form>
 			<% end %>
 		</div>
