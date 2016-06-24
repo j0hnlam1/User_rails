@@ -7,26 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class='container'>
+	<div class='row'>
+		<div class='nine columns'>
+			<a href="/secrets">secrets</a>
+		</div>
+		<div class='three columns'>
+			<% if current_user %>
+				<form action='/sessions/<%=session.id%>' method='post'>
+				    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+					<input type='hidden' name='_method' value='delete'>
+					<button type='submit'> Log Out</button>
+				</form>
+			<% end %>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='twelve columns'>
+			<% if flash[:errors]%>
+				<% flash[:errors].each do  |error| %>
+					<p> <%=error%> </p>
+				<% end %>
+			<% end %>
 
-<% if flash[:errors]%>
-	<% flash[:errors].each do  |error| %>
-		<p> <%=error%> </p>
-	<% end %>
-<% end %>
-
-<% if flash[:success] %>
-	<%= flash[:success] %>
-<% end %>
-
-<% if current_user %>
-	<form action='/sessions/<%=session.id%>' method='post'>
-	    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-		<input type='hidden' name='_method' value='delete'>
-		<button type='submit'> Log Out</button>
-	</form>
-<% end %>
-<%= yield %>
-
-<a href="/secrets">secrets</a>
+			<% if flash[:success] %>
+				<%= flash[:success] %>
+			<% end %>
+		</div>
+	</div>
+	<%= yield %>
+</div>
 </body>
 </html>
